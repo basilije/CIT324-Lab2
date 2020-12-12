@@ -72,7 +72,6 @@ void printMainMenu() {
   Serial.print("Q - change the current mode to MQTT mode\n"); 
 }
 
-
 /***********************************************************************************
 * Purpose: Print on the serial port the mac address in use.
 * No arguments, no returns 
@@ -232,7 +231,6 @@ void sendUDP()
   }
 }
 
-
 /***********************************************************************************
 * Purpose: Send the payload to topic
 * Arguments: topic - ; payload
@@ -267,7 +265,6 @@ void loop() {
 
   switch (current_mode_of_operation)
   {
-
     case OPERATION_TYPE_MQTT_MODE:
       if (WiFi.status() == WL_CONNECTED) {       
         checkForXPressed();  
@@ -297,7 +294,6 @@ void loop() {
       break;
 
     case OPERATION_TYPE_NORMAL:
-
       key_pressed = serialPrompt("Choice: ", 1);
 
       switch (key_pressed[0])
@@ -351,6 +347,7 @@ void loop() {
           changeModeToMQTT();
           break;          
       }
+      
       break;
   }
 }
